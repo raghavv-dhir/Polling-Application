@@ -37,4 +37,14 @@ public class PollController {
         pollService.deletePoll(id);
         return ResponseEntity.ok().build();
     }
+
+    @RestController
+    public class HealthController {
+
+        @GetMapping("/health")
+        public ResponseEntity<String> healthCheck() {
+            return ResponseEntity.ok("Application is running");
+        }
+    }
+
 }
